@@ -1,0 +1,6 @@
+Synonyms:
+If Statement, if, If, iF, IF
+While Loop, While, WHile, wile
+Commands:
+If Statement, if(){}
+While Loop, while(boolean){}
