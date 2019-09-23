@@ -1,4 +1,4 @@
-Synonyms:
+Triggers:
 If Statement, if, If, iF, IF
 While Loop, While, WHile, wile
 Commands:

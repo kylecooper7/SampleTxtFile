@@ -5,7 +5,7 @@ public class ReadingFromFile {
     static String fileName = "HereItIs.txt";	
 	static String line = null;
 	static String wordList[] = new String [10];
-	static boolean readingSynonyms = true;
+	static boolean readingTriggers = true;
 	static boolean readingCommands = false;
 	static String tempCommand = "";
 	static String theCommand = "";
@@ -37,50 +37,33 @@ public class ReadingFromFile {
             	{
                 wordList = line.split(", ");
                 tempCommand = wordList[0];
-                if(line.equals("Commands:"))
-                		{
-                	readingSynonyms = false;
+               // Set Category
+                switch(line){
+               case "Commands:":
+                	readingTriggers = false;
                 	readingCommands = true;
-                			
+                	break;
+               case "":
                 		}
-                
+                // 
                 for(String s: wordList) {
                 	
                 	if(s.equals(theInput)) {
-                		theCommand = wordList[0];
+                		theCommand = tempCommand;
                 		
                 	}
-                	
-                	
-                	
                 }
                 
                 if(readingCommands)
                 
                 for(String s: wordList) {
-                	
-                	if(s.equals(theCommand)) {
-                		 System.out.println(wordList[1]);
-                		
-                	}
-                	
-                	
-                	
-                }
 
-	
-	
-	
-                
-                
-                
-                
-            	}	
-            
-            
-            
-            
-            readingSynonyms = true;
+                	if(s.equals(theCommand)) {
+                		 System.out.println(wordList[1]);	
+                	}	
+                }
+            	}	            
+            readingTriggers = true;
             readingCommands = false;
             
 
