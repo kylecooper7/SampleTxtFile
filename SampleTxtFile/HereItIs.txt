@@ -1,6 +1,8 @@
 Triggers:
 If Statement, if, If, iF, IF
 While Loop, While, WHile, wile
+Print, print, say, proclaim, Print, Say
 Commands:
-If Statement, if(){}
-While Loop, while(boolean){}
+If Statement, print("if(){}");
+While Loop, print"while(boolean){}";
+Print, print("The Test Was Successful.");

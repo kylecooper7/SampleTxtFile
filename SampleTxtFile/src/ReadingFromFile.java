@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
+import javax.script.*;
 public class ReadingFromFile {
 
     static String fileName = "HereItIs.txt";	
@@ -9,15 +10,16 @@ public class ReadingFromFile {
 	static boolean readingCommands = false;
 	static String tempCommand = "";
 	static String theCommand = "";
+
 	
-	public static void FindNextSlot(){
+	public static void FindNextSlot() throws Exception{
 		
 		Scanner StringInput = new Scanner(System.in);
 
 		System.out.println("Input test:");
 		
 		String theInput = StringInput.nextLine();
-	
+
         // The name of the file to open.
 
 
@@ -59,7 +61,7 @@ public class ReadingFromFile {
                 for(String s: wordList) {
 
                 	if(s.equals(theCommand)) {
-                		 System.out.println(wordList[1]);	
+                		 Evaluate(wordList[1]);
                 	}	
                 }
             	}	            
@@ -83,5 +85,12 @@ public class ReadingFromFile {
         	}
 		
 	}
+	public static void Evaluate(String toEval) throws Exception {
+        ScriptEngineManager manager = new ScriptEngineManager();
+        ScriptEngine engine = manager.getEngineByName("nashorn");
+
+        // evaluate JavaScript code
+        engine.eval(toEval);
+    }
 	
 }
